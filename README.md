@@ -5,8 +5,7 @@ CLIENT-SIDE:
 1:install all the dependencies listed in the client/social-media-app/package.json file
 (Go to cmd in social-media-app and write "install dependencies")
 
-
-2. Open cmd in "social-media-app" and write "npm start" to start the client server
+2.Open cmd in "social-media-app" and write "npm start" to start the client server
 
 
 SERVER-SIDE:

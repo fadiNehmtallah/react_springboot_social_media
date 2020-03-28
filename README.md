@@ -23,7 +23,7 @@ SERVER-SIDE:
 In line 300 change the path to the path chosen for your "web server for chrome"
 In line 311 change the port number in image url to the corresponding port in "web server for chrome"
 
-6.finally insert "no-image.png"(located in server) in your chosen folder in "web server for chrome"
+6.finally insert "no-image.png"(location: client/social-media-app/src/images) in your chosen folder in "web server for chrome"
 
 7.Open cmd in server folder and write "mvn spring-boot:run" to boot your backend server
 

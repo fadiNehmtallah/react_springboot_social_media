@@ -1,6 +1,6 @@
 package com.example.mongodb.objects;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("comments")
 public class Comment{
-    private Date createdAt;
+    private LocalDateTime createdAt;
     private long screamId;
     private String userHandle;
     private String userImage;
@@ -19,7 +19,7 @@ public class Comment{
     
 
     public Comment(long screamId, String userHandle, String userImage, String body) {
-        this.createdAt = new Date();
+        this.createdAt = LocalDateTime.now();
         this.screamId = screamId;
         this.userHandle = userHandle;
         this.userImage = userImage;
@@ -29,11 +29,11 @@ public class Comment{
 
 
     
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

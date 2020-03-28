@@ -20,5 +20,11 @@ public class CustomNotificationDetailsService {
     public Notifications findNotificationById(ObjectId notificationsIds) {
         return notificationdao.findByNotificationsId(notificationsIds);
     }
+    public List<Notifications> findNotificationByScreamId(long screamId){
+        return notificationdao.findByScreamId(screamId);
+    }
+    public Notifications findNotificationsByScreamIdAndSenderAndType(long screamId,String sender,String type){
+        return notificationdao.findByScreamIdAndSenderAndType(screamId, sender,type);
+    }
 
 }

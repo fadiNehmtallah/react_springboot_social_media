@@ -15,4 +15,7 @@ public class CustomCommentDetailsService{
     public List<Comment> findCommentByScreamId(long screamId){
         return commentdao.findByScreamId(screamId);
     }
+    public List<Comment> findCommentByUserHandle(String userHandle){
+        return commentdao.findByUserHandle(userHandle);
+    }
 }

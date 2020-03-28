@@ -17,7 +17,10 @@ public class CustomLikeDetailsService {
         return likedao.findByUserHandle(userHandle);
     }
     public Like findLikeByScreamIdAndUserHandle(String userHandle,long screamId){
-        return likedao.findByScreamIdAndUserHandle( screamId,userHandle);
+        return likedao.findByScreamIdAndUserHandle(screamId,userHandle);
+    }
+    public List<Like> findLikeByScreamId(long screamId){
+        return likedao.findByScreamId(screamId);
     }
 
 }

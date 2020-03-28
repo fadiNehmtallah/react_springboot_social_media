@@ -1,6 +1,6 @@
 package com.example.mongodb.objects;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("notifications")
 public class Notifications{
     private Long screamId;
-    private Date createdAt;
+    private LocalDateTime createdAt;
     private String recipient;
     private String sender;
     private String type;
@@ -20,7 +20,7 @@ public class Notifications{
 
     public Notifications(Long screamId, String recipient, String sender, String type) {
         this.screamId = screamId;
-        this.createdAt = new Date();
+        this.createdAt = LocalDateTime.now();
         this.recipient = recipient;
         this.sender = sender;
         this.type = type;
@@ -44,11 +44,11 @@ public class Notifications{
         this.screamId = screamId;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

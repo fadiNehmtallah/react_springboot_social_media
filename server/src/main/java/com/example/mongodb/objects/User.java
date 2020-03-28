@@ -1,38 +1,32 @@
 package com.example.mongodb.objects;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("users")
-public class User {
+public class User{
 	@Id
 	private long userId;
-	private Date createdAt;
+	private LocalDateTime createdAt;
 	private String email;
 	private String handle;
-	private String token;
 	private String password;
 	private String confirmPassword;
 	private String location;
 	private String bio;
 	private String website;
 	private String imageUrl;
-	
-
 	public static final String SEQUENCE_NAME = "user_sequence";
 
-	public User(String email, String handle, String password, String confirmPassword) {
-		int x1 = (int) Math.floor(Math.random()*1000000000);
-		int x2 = (int) Math.floor(Math.random()*1000000000);
-		this.token = "Bearer "+x1 + email + x2 + handle;
-		this.createdAt = new Date();
-		this.email = email;
+	public User(String handle, String password,String confirmPassword,String email) {
+		this.createdAt = LocalDateTime.now();
 		this.handle = handle;
 		this.password = password;
 		this.confirmPassword = confirmPassword;
-		this.imageUrl = "no-img.png";
+		this.email= email;
+		this.imageUrl = "http://127.0.0.1:8877/no-image.png";
 	}
 
 	public long getUserId() {
@@ -44,14 +38,6 @@ public class User {
 	}
 
 
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 
 	public String getPassword() {
 		return this.password;
@@ -69,12 +55,11 @@ public class User {
 		this.confirmPassword = confirmPassword;
 	}
 
-
-	public Date getCreatedAt() {
+	public LocalDateTime getCreatedAt() {
 		return this.createdAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
 
@@ -125,6 +110,9 @@ public class User {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	
+
+	
 
 	
 

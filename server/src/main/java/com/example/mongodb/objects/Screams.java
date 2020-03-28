@@ -1,6 +1,6 @@
 package com.example.mongodb.objects;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,18 +10,18 @@ public class Screams{
     @Id
     private long screamId;
     private String body;
-    private Date createdAt;
+    private LocalDateTime createdAt;
     private int commentCount;
     private int likeCount;
     private String userHandle;
     private String userImage;
 
     public static final String SEQUENCE_NAME = "screams_sequence";
+    
 
-
-    public Screams(long screamId, String body, String userHandle, String userImage) {
+    public Screams(String body, String userHandle, String userImage) {
         this.body = body;
-        this.createdAt = new Date();
+        this.createdAt = LocalDateTime.now();
         this.userHandle = userHandle;
         this.userImage = userImage;
         this.commentCount = 0;
@@ -44,11 +44,11 @@ public class Screams{
         this.body = body;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

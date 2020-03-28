@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface Commentdao extends MongoRepository<Comment, String>{
     List<Comment> findByScreamId(long screamId);
+    List<Comment> findByUserHandle(String userHandle);
 }
